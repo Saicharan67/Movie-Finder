@@ -1,3 +1,5 @@
+This app Finds the Movie and details of the movie for you
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
