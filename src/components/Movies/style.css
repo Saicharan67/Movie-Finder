@@ -1,0 +1,17 @@
+.clip {
+  width: 250px;
+  height: 450px;
+  margin: 30px;
+  border-radius: 10px;
+}
+img {
+  top: 0;
+  width: 250px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+p {
+  font-size: 20px;
+  text-align: center;
+}
