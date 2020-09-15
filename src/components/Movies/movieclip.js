@@ -7,6 +7,7 @@ const MovieClip = (props) => {
       <img
         src={"https://image.tmdb.org/t/p/w185" + props.poster}
         alt="poster"
+        className="img"
       />
       <p>{props.Name}</p>
     </div>

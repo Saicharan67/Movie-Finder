@@ -22,34 +22,46 @@ class Finder extends React.Component {
     this.setState({
       ListOfMovies: [],
     });
+    document.getElementsByClassName("loading")[0].style.display = "block";
     fetch(url)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data.results);
-        this.setState({
-          ListOfMovies: data.results,
+        const v = data.results.filter((res) => {
+          return res.poster_path !== null;
         });
+        console.log(v);
+        if (v.length != 0) {
+          this.Ondata();
+          document.getElementsByClassName(
+            "search"
+          )[0].innerHTML = `<h2>Search Results For " ${a} "</h2>`;
+          this.setState({
+            ListOfMovies: v,
+          });
+        } else {
+          this.OnNodata();
+        }
+        document.getElementsByClassName("loading")[0].style.display = "none";
       });
     this.setState({
       currentSearch: "",
     });
   };
-  showResults = () => {
-    const body = document.getElementsByClassName("results")[0];
-    if (this.state.ListOfMovies) {
-      this.state.ListOfMovies.forEach((e) => {
-        const add = "https://image.tmdb.org/t/p/w185" + e.poster_path;
-        body.innerHTML += `
-      
-      <img src=${add} alt="poster"/>
-      <p>${e.original_title}</p>
-      
-      `;
-      });
+  Ondata = () => {
+    document.getElementsByClassName("nodata-img")[0].style.display = "none";
+  };
+  OnNodata = () => {
+    document.getElementsByClassName("nodata-img")[0].style.display = "block";
+    document.getElementsByClassName("search")[0].innerHTML = "";
+  };
+  OnSearchEnter = (event) => {
+    if (event.key == "Enter") {
+      this.OnSearch();
     }
   };
+
   render = () => {
     return (
       <div className="root">
@@ -58,20 +70,25 @@ class Finder extends React.Component {
             onChange={this.InputChange}
             value={this.state.currentSearch}
             type="text"
-            placeholder="Enter Flower Name"
+            placeholder="Enter Movie Name"
+            onKeyPress={this.OnSearchEnter}
           ></input>
           <button onClick={this.OnSearch} className="add-btn">
             Search
           </button>
         </div>
+        <div className="loading">
+          <img src={require("../../assets/gear.gif")} />
+        </div>
+        <div className="search"></div>
         <div className="results">
+          <img
+            src={require("../../assets/Nodata.jpg")}
+            alt="nodata"
+            className="nodata-img"
+          />
           {this.state.ListOfMovies.map((movie) => {
-            return (
-              <MovieClip
-                poster={movie.poster_path}
-                Name={movie.original_title}
-              />
-            );
+            return <MovieClip poster={movie.poster_path} Name={movie.title} />;
           })}
         </div>
       </div>

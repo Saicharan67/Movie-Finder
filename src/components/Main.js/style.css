@@ -8,6 +8,7 @@
   align-items: center;
 }
 .root-child-1 {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,5 +37,13 @@ input {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+.nodata-img {
+  width: 700px;
+  height: 400px;
+  display: none;
+}
+.loading {
+  display: none;
 }
