@@ -22,6 +22,7 @@ class Finder extends React.Component {
     this.setState({
       ListOfMovies: [],
     });
+    this.Ondata();
     document.getElementsByClassName("loading")[0].style.display = "block";
     fetch(url)
       .then((response) => {
