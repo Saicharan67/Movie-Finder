@@ -32,7 +32,7 @@ class Finder extends React.Component {
         const v = data.results.filter((res) => {
           return res.poster_path !== null;
         });
-        console.log(v);
+
         if (v.length != 0) {
           this.Ondata();
           document.getElementsByClassName(
@@ -89,7 +89,13 @@ class Finder extends React.Component {
             className="nodata-img"
           />
           {this.state.ListOfMovies.map((movie) => {
-            return <MovieClip poster={movie.poster_path} Name={movie.title} />;
+            return (
+              <MovieClip
+                id={movie.id}
+                poster={movie.poster_path}
+                Name={movie.title}
+              />
+            );
           })}
         </div>
       </div>
