@@ -67,6 +67,7 @@ class Finder extends React.Component {
     return (
       <div className="root">
         <div className="root-child-1">
+          <h2>Movie Finder</h2>
           <input
             onChange={this.InputChange}
             value={this.state.currentSearch}

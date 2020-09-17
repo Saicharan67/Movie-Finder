@@ -7,12 +7,18 @@
   justify-content: center;
   align-items: center;
 }
+
 .root-child-1 {
-  margin-top: 100px;
+  margin: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+h2 {
+  position: relative;
+  top: -40px;
+  font-size: 40px;
 }
 input {
   width: 600px;
