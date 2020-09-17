@@ -37,7 +37,9 @@ class Finder extends React.Component {
           this.Ondata();
           document.getElementsByClassName(
             "search"
-          )[0].innerHTML = `<h2>Search Results For " ${a} "</h2>`;
+          )[0].innerHTML = `<h2 className='search_res' style=${{
+            color: "red",
+          }}>Search Results For " ${a} "</h2>`;
           this.setState({
             ListOfMovies: v,
           });
@@ -67,7 +69,7 @@ class Finder extends React.Component {
     return (
       <div className="root">
         <div className="root-child-1">
-          <h2>Movie Finder</h2>
+          <h2 className="title">Movie Finder</h2>
           <input
             onChange={this.InputChange}
             value={this.state.currentSearch}
