@@ -99,15 +99,17 @@ class Finder extends React.Component {
         const gen = data.genres.map((g) => {
           return g.name;
         });
-        document.getElementsByClassName("Modal2")[0].innerHTML = `
+        document.getElementsByClassName("Modal2")[0].innerHTML = `<div>
         <img src=${
           "https://image.tmdb.org/t/p/w185" + data.poster_path
-        } alt="poster"/>
-        <h3> Title      :      ${data.title}</h3>
-        <h3> OverView      :      ${data.overview}</h3>
-        <h3> Budget      :      ${data.budget}</h3>
+        } alt="poster"/></div>
+        <h3> OverView      :      ${
+          data.overview ? data.overview : "No-data"
+        }</h3>
+        <h3> Title      :     ${data.title ? data.title : "No-data"}</h3>    
+        <h3> Budget      :      ${data.budget ? data.budget : "No-data"}</h3>
         <h3> Genres      :      ${gen}</h3>
-        <h3>Revenue      :     ${data.revenue}</h3>
+        <h3>Revenue      :     ${data.revenue ? data.revenue : "No-data"}</h3>
         `;
       });
   };
@@ -132,7 +134,7 @@ class Finder extends React.Component {
         </div>
         <Modal
           visible={this.state.visible}
-          width="600"
+          width="800"
           height="700"
           effect="fadeInLeft"
           onClickAway={() => this.closeModal()}
