@@ -164,4 +164,3 @@ class Finder extends React.Component {
   };
 }
 export default Finder;
-//github

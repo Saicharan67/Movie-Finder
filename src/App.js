@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Finder from "./components/Main.js/main.js";
 import Nav from "./pages/navigator.js";

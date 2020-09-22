@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-
+import "./navstyle.css";
 function Navigation(props) {
   return (
     <div className="navigation">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar sticky-top navbar-expand-lg navbar-dark ">
         <div class="container">
           <Link class="navbar-brand" to="/">
             Movie Finder
@@ -38,7 +38,7 @@ function Navigation(props) {
                 }`}
               >
                 <Link class="nav-link" to="/Actor">
-                  Actor
+                  About
                 </Link>
               </li>
               <li
@@ -47,7 +47,7 @@ function Navigation(props) {
                 }`}
               >
                 <Link class="nav-link" to="/Director">
-                  Director
+                  Contact
                 </Link>
               </li>
             </ul>
