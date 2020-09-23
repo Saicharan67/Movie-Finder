@@ -6,7 +6,7 @@ function Navigation(props) {
     <div className="navigation">
       <nav class="navbar sticky-top navbar-expand-lg navbar-dark ">
         <div class="container">
-          <Link class="navbar-brand" to="/">
+          <Link class="navbar-brand" to="#">
             Movie Finder
           </Link>
           <button
@@ -27,7 +27,7 @@ function Navigation(props) {
                   props.location.pathname === "/" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/">
+                <Link class="nav-link" to="#">
                   Home
                   <span class="sr-only">(current)</span>
                 </Link>
