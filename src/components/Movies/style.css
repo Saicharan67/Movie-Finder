@@ -3,6 +3,7 @@
   height: 300px;
   margin: 50px;
   border-radius: 10px;
+  margin-bottom: 60px;
 }
 .img {
   top: 0;
@@ -12,6 +13,27 @@
   border-radius: 10px;
 }
 p {
-  font-size: 20px;
+  font-size: 1.3rem;
   text-align: center;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .clip {
+    width: 140px;
+    height: 260px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  .img {
+    top: 0;
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
 }

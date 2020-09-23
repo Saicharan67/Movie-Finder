@@ -2,6 +2,8 @@ import React from "react";
 import "./style.css";
 import MovieClip from "../Movies/movieclip.js";
 import Modal from "react-awesome-modal";
+import { useMediaQuery } from "react-responsive";
+import MediaQuery from "react-responsive";
 class Finder extends React.Component {
   constructor(props) {
     super(props);
@@ -125,22 +127,24 @@ class Finder extends React.Component {
             placeholder="Enter Movie Name"
             onKeyPress={this.OnSearchEnter}
           ></input>
-          <button onClick={this.OnSearch} className="add-btn">
+          <button onClick={this.OnSearch} className="btn-grad">
             Search
           </button>
         </div>
         <div className="loading">
           <img src={require("../../assets/gear.gif")} />
         </div>
+
         <Modal
           visible={this.state.visible}
-          width="800"
-          height="700"
+          // width="800"
+          // height="700"
           effect="fadeInLeft"
           onClickAway={() => this.closeModal()}
         >
           <div className="Modal2"></div>
         </Modal>
+
         <div className="search"></div>
         <div className="results">
           <img
