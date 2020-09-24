@@ -11,7 +11,8 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route path="/" exact component={() => <Finder />} />
+          <Route path="" exact component={() => <Finder />} />
+          <Route path="/Home" exact component={() => <Finder />} />
           <Route path="/Actor" exact component={() => <Finder />} />
           <Route path="/Director" exact component={() => <Finder />} />
         </Switch>
