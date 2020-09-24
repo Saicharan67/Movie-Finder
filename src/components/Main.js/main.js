@@ -34,6 +34,10 @@ class Finder extends React.Component {
   OnSearch = () => {
     document.getElementsByClassName("search")[0].innerHTML = "";
     const a = this.state.currentSearch;
+    if (a.length === 0) {
+      alert("Please Enter any Movie Name");
+      return;
+    }
     const base = "https://api.themoviedb.org/3/search/movie?";
     const key = "4b7adfd71821a32644eb8175d4a485eb";
     const url = base + "api_key=" + key + "&query=" + a;
