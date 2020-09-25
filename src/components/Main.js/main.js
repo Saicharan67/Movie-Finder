@@ -172,3 +172,5 @@ class Finder extends React.Component {
   };
 }
 export default Finder;
+
+//https://api.themoviedb.org/3/search/person?api_key=4b7adfd71821a32644eb8175d4a485eb&query=<KEYWORD>

@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  HashRouter,
+  Route,
+  Switch,
+} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Finder from "./components/Main.js/main.js";
@@ -10,12 +15,12 @@ function App() {
     <div className="App">
       <Router>
         <Nav />
-        <Switch>
+        <HashRouter>
           <Route path="" exact component={() => <Finder />} />
           <Route path="/Home" exact component={() => <Finder />} />
           <Route path="/Actor" exact component={() => <Finder />} />
           <Route path="/Director" exact component={() => <Finder />} />
-        </Switch>
+        </HashRouter>
         <Footer />
       </Router>
     </div>
