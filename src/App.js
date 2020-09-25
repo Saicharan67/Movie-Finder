@@ -15,12 +15,12 @@ function App() {
     <div className="App">
       <Router>
         <Nav />
-        <HashRouter>
+        <Switch>
           <Route path="" exact component={() => <Finder />} />
           <Route path="/Home" exact component={() => <Finder />} />
           <Route path="/Actor" exact component={() => <Finder />} />
           <Route path="/Director" exact component={() => <Finder />} />
-        </HashRouter>
+        </Switch>
         <Footer />
       </Router>
     </div>
