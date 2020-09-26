@@ -24,35 +24,29 @@ function Navigation(props) {
             <ul class="navbar-nav ml-auto">
               <li
                 class={`nav-item  ${
-                  props.location.pathname === "/Movie-Finder/Home"
-                    ? "active"
-                    : ""
+                  props.location.pathname === "/Home" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/Movie-Finder/Home">
+                <Link class="nav-link" to="/Home">
                   Home
                   <span class="sr-only">(current)</span>
                 </Link>
               </li>
               <li
                 class={`nav-item  ${
-                  props.location.pathname === "/Movie-Finder/Actor"
-                    ? "active"
-                    : ""
+                  props.location.pathname === "/Actor" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/Movie-Finder/Actor">
+                <Link class="nav-link" to="/Actor">
                   Actor
                 </Link>
               </li>
               <li
                 class={`nav-item  ${
-                  props.location.pathname === "/Movie-Finder/Director"
-                    ? "active"
-                    : ""
+                  props.location.pathname === "/Director" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/Movie-Finder/Director">
+                <Link class="nav-link" to="/Director">
                   Director
                 </Link>
               </li>

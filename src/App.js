@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
+  Redirect,
   HashRouter,
   Route,
   Switch,
@@ -17,17 +18,10 @@ function App() {
         <Nav />
         <Switch>
           <Route path="" exact component={() => <Finder />} />
-          <Route path="/Movie-Finder/Home" exact component={() => <Finder />} />
-          <Route
-            path="/Movie-Finder/Actor"
-            exact
-            component={() => <Finder />}
-          />
-          <Route
-            path="/Movie-Finder/Director"
-            exact
-            component={() => <Finder />}
-          />
+          <Route path="/Home" exact component={() => <Finder />} />
+          <Route path="/Actor" exact component={() => <Finder />} />
+          <Route path="/Director" exact component={() => <Finder />} />
+          <Redirect to="/404" />
         </Switch>
         <Footer />
       </Router>

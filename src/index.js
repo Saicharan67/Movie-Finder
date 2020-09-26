@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
-  <BrowserRouter basename="/Movie-Finder">
+  <BrowserRouter basename="/Movie-Finder/">
     <App />
   </BrowserRouter>,
   document.getElementById("root")
