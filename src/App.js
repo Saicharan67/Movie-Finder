@@ -17,11 +17,30 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route path="" exact component={() => <Finder />} />
-          <Route path="/Home" exact component={() => <Finder />} />
-          <Route path="/Actor" exact component={() => <Finder />} />
-          <Route path="/Director" exact component={() => <Finder />} />
-          <Redirect to="/404" />
+          <Route
+            basepath="/Movie-Finder"
+            path=""
+            exact
+            component={() => <Finder />}
+          />
+          <Route
+            basepath="/Movie-Finder"
+            path="/Home"
+            exact
+            component={() => <Finder />}
+          />
+          <Route
+            basepath="/Movie-Finder"
+            path="/Actor"
+            exact
+            component={() => <Finder />}
+          />
+          <Route
+            basepath="/Movie-Finder"
+            path="/Director"
+            exact
+            component={() => <Finder />}
+          />
         </Switch>
         <Footer />
       </Router>
