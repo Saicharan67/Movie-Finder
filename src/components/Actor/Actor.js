@@ -52,24 +52,29 @@ class Actor extends React.Component {
       })
       .then((data) => {
         data.results.forEach((res) => {
-          console.log(res);
+          console.log(res.known_for_department, res.name, res.profile_path);
+          res.known_for.forEach((movie) => {
+            console.log(movie.poster_path, movie.original_title);
+            console.log("---------------------");
+          });
+          console.log("******************************");
           // return res.known_for.poster_path !== null;
         });
 
-        // if (v.length != 0) {
-        //   this.Ondata();
-        //   document.getElementsByClassName(
-        //     "search"
-        //   )[0].innerHTML = `<h2>Search Results For " ${
-        //     a.charAt(0).toUpperCase() + a.slice(1)
-        //   } "</h2>`;
-        //   this.setState({
-        //     ListOfMovies: v,
-        //   });
-        // } else {
-        //   this.OnNodata();
-        // }
-        // document.getElementsByClassName("loading")[0].style.display = "none";
+        if (data.results.length != 0) {
+          this.Ondata();
+          document.getElementsByClassName(
+            "search"
+          )[0].innerHTML = `<h2>Search Results For " ${
+            a.charAt(0).toUpperCase() + a.slice(1)
+          } "</h2>`;
+          this.setState({
+            ListOfMovies: data.results,
+          });
+        } else {
+          this.OnNodata();
+        }
+        document.getElementsByClassName("loading")[0].style.display = "none";
       });
     this.setState({
       currentSearch: "",
@@ -121,22 +126,42 @@ class Actor extends React.Component {
         </Modal>
 
         <div className="search"></div>
-        <div className="results">
+        <div>
           <img
             src={require("../../assets/Nodata.jpg")}
             alt="nodata"
             className="nodata-img"
           />
-          {this.state.ListOfMovies.map((movie) => {
-            return (
-              <MovieClip
-                id={movie.id}
-                poster={movie.id}
-                Name={movie.title}
-                when={this.showMovie}
-              />
-            );
-          })}
+          <div className="actor">
+            {this.state.ListOfMovies.map((res) => {
+              return (
+                <div className="divisions">
+                  <h3 className="heading">
+                    Name:{res.name} Known_For:{res.known_for_department}
+                  </h3>
+
+                  <img
+                    style={{ width: 200, height: 300 }}
+                    src={"https://image.tmdb.org/t/p/w185" + res.profile_path}
+                    alt="profile pic"
+                  />
+
+                  <div className="results">
+                    {res.known_for.map((movie) => {
+                      return (
+                        <MovieClip
+                          id={movie.id}
+                          poster={movie.poster_path}
+                          Name={movie.original_title}
+                          when={this.showMovie}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
