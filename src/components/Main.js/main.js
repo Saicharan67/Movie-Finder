@@ -128,7 +128,7 @@ class Finder extends React.Component {
             onChange={this.InputChange}
             value={this.state.currentSearch}
             type="text"
-            placeholder="Enter Movie Name"
+            placeholder="Enter Movies Name"
             onKeyPress={this.OnSearchEnter}
           ></input>
           <button onClick={this.OnSearch} className="btn-grad">
