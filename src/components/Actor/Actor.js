@@ -11,6 +11,7 @@ class Actor extends React.Component {
       currentSearch: "",
       ListOfMovies: [],
       visible: false,
+      imdb: "",
     };
   }
   openModal() {
@@ -51,15 +52,20 @@ class Actor extends React.Component {
         return response.json();
       })
       .then((data) => {
-        data.results.forEach((res) => {
-          console.log(res.known_for_department, res.name, res.profile_path);
-          res.known_for.forEach((movie) => {
-            console.log(movie.poster_path, movie.original_title);
-            console.log("---------------------");
-          });
-          console.log("******************************");
-          // return res.known_for.poster_path !== null;
-        });
+        // data.results.forEach((res) => {
+        //   console.log(res.known_for_department, res.name, res.profile_path);
+        //   res.known_for.forEach((movie) => {
+        //     console.log(movie.poster_path, movie.original_title);
+        //     console.log("---------------------");
+        //   });
+        //   console.log("******************************");
+        //   // return res.known_for.poster_path !== null;
+        // });
+        console.log(
+          data.results.sort(
+            (a, b) => parseFloat(b.popularity) - parseFloat(a.popularity)
+          )
+        );
 
         if (data.results.length != 0) {
           this.Ondata();
@@ -93,7 +99,53 @@ class Actor extends React.Component {
     }
   };
   showMovie = (movieid) => {
-    alert("clicked");
+    const imdburl =
+      "https://api.themoviedb.org/3/movie/" +
+      movieid +
+      "/external_ids?api_key=4b7adfd71821a32644eb8175d4a485eb";
+    fetch(imdburl)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          imdb: data.imdb_id,
+        });
+      });
+    document.getElementsByClassName(
+      "Modal2"
+    )[0].innerHTML = ` <img src=${require("../../assets/loadin2.gif")}  />`;
+    this.openModal();
+    const url =
+      "https://api.themoviedb.org/3/movie/" +
+      movieid +
+      "?api_key=4b7adfd71821a32644eb8175d4a485eb";
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        const gen = data.genres.map((g) => {
+          return g.name;
+        });
+        document.getElementsByClassName("Modal2")[0].innerHTML = `<div>
+        <img src=${
+          "https://image.tmdb.org/t/p/w185" + data.poster_path
+        } alt="poster"/></div>
+        <h3> OverView      :      ${
+          data.overview ? data.overview : "No-data"
+        }</h3>
+        <h3> Title      :     ${data.title ? data.title : "No-data"}</h3>    
+        <h3> Budget      :      ${data.budget ? data.budget : "No-data"}</h3>
+        <h3> Genres      :      ${gen}</h3>
+        <h3>Revenue      :     ${data.revenue ? data.revenue : "No-data"}</h3>
+        <a href='https://www.imdb.com/title/${
+          this.state.imdb
+        }' target="blank">More Details</a>
+        `;
+      });
   };
   render = () => {
     return (
@@ -142,7 +194,11 @@ class Actor extends React.Component {
 
                   <img
                     style={{ width: 200, height: 300 }}
-                    src={"https://image.tmdb.org/t/p/w185" + res.profile_path}
+                    src={
+                      res.profile_path
+                        ? "https://image.tmdb.org/t/p/w185" + res.profile_path
+                        : ""
+                    }
                     alt="profile pic"
                   />
 
@@ -152,7 +208,7 @@ class Actor extends React.Component {
                         <MovieClip
                           id={movie.id}
                           poster={movie.poster_path}
-                          Name={movie.original_title}
+                          Name={movie.title}
                           when={this.showMovie}
                         />
                       );

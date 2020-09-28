@@ -8,7 +8,11 @@ const MovieClip = (props) => {
   return (
     <div className="clip">
       <img
-        src={"https://image.tmdb.org/t/p/w185" + props.poster}
+        src={
+          props.poster
+            ? "https://image.tmdb.org/t/p/w185" + props.poster
+            : require("../../assets/noimg.png")
+        }
         alt="poster"
         className="img"
         onClick={myfuc}

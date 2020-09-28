@@ -35,6 +35,7 @@ input {
   align-content: center;
   color: black;
   outline: none;
+  margin-top: -1rem;
   margin-bottom: 1rem;
 }
 /* .add-btn {
