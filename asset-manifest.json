@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/Movie-Finder/static/css/main.22b99c33.chunk.css",
-    "main.js": "/Movie-Finder/static/js/main.afd881e2.chunk.js",
-    "main.js.map": "/Movie-Finder/static/js/main.afd881e2.chunk.js.map",
+    "main.css": "/Movie-Finder/static/css/main.6febbf06.chunk.css",
+    "main.js": "/Movie-Finder/static/js/main.a218aade.chunk.js",
+    "main.js.map": "/Movie-Finder/static/js/main.a218aade.chunk.js.map",
     "runtime-main.js": "/Movie-Finder/static/js/runtime-main.f0895b71.js",
     "runtime-main.js.map": "/Movie-Finder/static/js/runtime-main.f0895b71.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/Movie-Finder/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.3bd58479.chunk.js": "/Movie-Finder/static/js/2.3bd58479.chunk.js",
-    "static/js/2.3bd58479.chunk.js.map": "/Movie-Finder/static/js/2.3bd58479.chunk.js.map",
+    "static/js/2.7bd58ce6.chunk.js": "/Movie-Finder/static/js/2.7bd58ce6.chunk.js",
+    "static/js/2.7bd58ce6.chunk.js.map": "/Movie-Finder/static/js/2.7bd58ce6.chunk.js.map",
     "index.html": "/Movie-Finder/index.html",
-    "precache-manifest.ae115cf89403dae6940e77e74344cd31.js": "/Movie-Finder/precache-manifest.ae115cf89403dae6940e77e74344cd31.js",
+    "precache-manifest.274bf9aa7a6e38e287414f0ebe73ac1d.js": "/Movie-Finder/precache-manifest.274bf9aa7a6e38e287414f0ebe73ac1d.js",
     "service-worker.js": "/Movie-Finder/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/Movie-Finder/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.22b99c33.chunk.css.map": "/Movie-Finder/static/css/main.22b99c33.chunk.css.map",
-    "static/js/2.3bd58479.chunk.js.LICENSE.txt": "/Movie-Finder/static/js/2.3bd58479.chunk.js.LICENSE.txt",
+    "static/css/main.6febbf06.chunk.css.map": "/Movie-Finder/static/css/main.6febbf06.chunk.css.map",
+    "static/js/2.7bd58ce6.chunk.js.LICENSE.txt": "/Movie-Finder/static/js/2.7bd58ce6.chunk.js.LICENSE.txt",
     "static/media/Nodata.jpg": "/Movie-Finder/static/media/Nodata.4bc099bd.jpg",
     "static/media/gear.gif": "/Movie-Finder/static/media/gear.0af8f612.gif",
-    "static/media/loadin2.gif": "/Movie-Finder/static/media/loadin2.34eb35ca.gif"
+    "static/media/loadin2.gif": "/Movie-Finder/static/media/loadin2.34eb35ca.gif",
+    "static/media/noimg.png": "/Movie-Finder/static/media/noimg.543042e1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f0895b71.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.3bd58479.chunk.js",
-    "static/css/main.22b99c33.chunk.css",
-    "static/js/main.afd881e2.chunk.js"
+    "static/js/2.7bd58ce6.chunk.js",
+    "static/css/main.6febbf06.chunk.css",
+    "static/js/main.a218aade.chunk.js"
   ]
 }
