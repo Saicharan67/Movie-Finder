@@ -27,7 +27,7 @@ function Navigation(props) {
                   props.location.pathname === "/" ? "active" : ""
                 }`}
               >
-                <Link class="nav-link" to="/Movie-Finder">
+                <Link class="nav-link" to="/">
                   Home
                   <span class="sr-only">(current)</span>
                 </Link>

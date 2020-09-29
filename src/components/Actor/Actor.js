@@ -2,8 +2,7 @@ import React from "react";
 import "./Style.css";
 import MovieClip from "../Movies/movieclip.js";
 import Modal from "react-awesome-modal";
-import { useMediaQuery } from "react-responsive";
-import MediaQuery from "react-responsive";
+
 class Actor extends React.Component {
   constructor(props) {
     super(props);
