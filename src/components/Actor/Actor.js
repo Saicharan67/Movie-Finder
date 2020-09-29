@@ -155,7 +155,7 @@ class Actor extends React.Component {
             onChange={this.InputChange}
             value={this.state.currentSearch}
             type="text"
-            placeholder="Enter Actor Name"
+            placeholder="Enter Actor Name---"
             onKeyPress={this.OnSearchEnter}
           ></input>
           <button onClick={this.OnSearch} className="btn-grad">

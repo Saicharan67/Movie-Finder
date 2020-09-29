@@ -22,30 +22,12 @@ function Navigation(props) {
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
-                }`}
-              >
-                <Link class="nav-link" to="/">
-                  Home
-                  <span class="sr-only">(current)</span>
-                </Link>
-              </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/actor" ? "active" : ""
-                }`}
-              >
+              <li>
                 <Link class="nav-link" to="/actor">
                   Actor
                 </Link>
               </li>
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/director" ? "active" : ""
-                }`}
-              >
+              <li>
                 <Link class="nav-link" to="/director">
                   Director
                 </Link>
