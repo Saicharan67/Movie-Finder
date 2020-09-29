@@ -1,9 +1,12 @@
 .clip {
-  width: 200px;
+  width: 250px;
   height: 300px;
   margin: 50px;
   border-radius: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
+  display: block;
+
+  align-items: center;
 }
 .img {
   top: 0;
@@ -13,6 +16,7 @@
   border-radius: 10px;
 }
 p {
+  width: 300px;
   font-size: 1.3rem;
   text-align: center;
 }

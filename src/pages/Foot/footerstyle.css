@@ -1,10 +1,15 @@
-footer {
+.footer {
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   height: 40px;
 }
 a {
   color: blanchedalmond;
+}
+a:hover {
+  text-decoration: none;
+  color: rgb(63, 94, 153);
 }

@@ -18,10 +18,10 @@ function App() {
       <Router>
         <Nav />
         <Switch>
-          <Route pattern="/Movie-Finder" exact component={() => <Finder />} />
-
+          <Route path="/Movie-Finder" exact component={() => <Finder />} />
+          <Route path="/Movie-Finder" exact component={() => <Finder />} />
           <Route path="/actor" exact component={() => <Actor />} />
-          <Route path="/Director" exact component={() => <Finder />} />
+          <Route path="/Trending" exact component={() => <Finder />} />
         </Switch>
         <Footer />
       </Router>

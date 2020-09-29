@@ -4,3 +4,6 @@ nav {
 button {
   color: cornsilk;
 }
+.nav-link:hover {
+  transform: translateY(-2px);
+}
