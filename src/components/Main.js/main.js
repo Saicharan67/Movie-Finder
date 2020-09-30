@@ -11,6 +11,7 @@ class Finder extends React.Component {
       currentSearch: "",
       ListOfMovies: [],
       visible: false,
+      imdb: "",
     };
   }
   openModal() {
@@ -24,6 +25,7 @@ class Finder extends React.Component {
       visible: false,
     });
   }
+
   InputChange = (event) => {
     this.setState({
       currentSearch:
@@ -88,6 +90,20 @@ class Finder extends React.Component {
     }
   };
   showMovie = (movieid) => {
+    const imdburl =
+      "https://api.themoviedb.org/3/movie/" +
+      movieid +
+      "/external_ids?api_key=4b7adfd71821a32644eb8175d4a485eb";
+    fetch(imdburl)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          imdb: data.imdb_id,
+        });
+      });
     document.getElementsByClassName(
       "Modal2"
     )[0].innerHTML = ` <img src=${require("../../assets/loadin2.gif")}  />`;
@@ -116,7 +132,9 @@ class Finder extends React.Component {
         <h3> Budget      :      ${data.budget ? data.budget : "No-data"}</h3>
         <h3> Genres      :      ${gen}</h3>
         <h3>Revenue      :     ${data.revenue ? data.revenue : "No-data"}</h3>
-        
+        <a href='https://www.imdb.com/title/${
+          this.state.imdb
+        }' target="blank">More Details</a>
         `;
       });
   };

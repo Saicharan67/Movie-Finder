@@ -187,13 +187,10 @@ class Actor extends React.Component {
             {this.state.ListOfMovies.map((res) => {
               return (
                 <div className="divisions">
-                  <h3 className="heading">
-                    Name&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;{res.name}
-                  </h3>
-                  <h3 className="headings">
-                    Known For&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;
-                    {res.known_for_department}
-                  </h3>
+                  <h4 className="headings">Name &nbsp; : &nbsp;{res.name}</h4>
+                  <h4 className="headings">
+                    Known For&nbsp; :&nbsp; {res.known_for_department}
+                  </h4>
 
                   <img
                     style={{ width: 200, height: 300 }}

@@ -10,3 +10,17 @@ select {
   width: 200px;
   margin-left: 5%;
 }
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  select {
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 7px;
+    outline: none;
+  }
+  .Modal2 > div > img {
+    height: 300px;
+    width: 200px;
+    margin-left: 5%;
+  }
+}

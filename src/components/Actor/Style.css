@@ -7,14 +7,21 @@ img[src=""] {
   justify-content: space-around;
 }
 .divisions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
   border: 2px solid black;
   border-radius: 1rem;
   margin: 1rem;
 }
-.divisions > h3 {
-  font-size: 1.5rem;
-  margin: 2rem;
+.divisions > h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+  text-align: center;
 }
 .divisions > img {
   border-radius: 1rem;
+  margin: 1rem;
 }
