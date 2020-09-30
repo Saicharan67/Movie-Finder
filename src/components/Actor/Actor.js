@@ -188,7 +188,11 @@ class Actor extends React.Component {
               return (
                 <div className="divisions">
                   <h3 className="heading">
-                    Name:{res.name} Known_For:{res.known_for_department}
+                    Name&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;{res.name}
+                  </h3>
+                  <h3 className="headings">
+                    Known For&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;
+                    {res.known_for_department}
                   </h3>
 
                   <img
