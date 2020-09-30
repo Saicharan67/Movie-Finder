@@ -116,6 +116,7 @@ class Finder extends React.Component {
         <h3> Budget      :      ${data.budget ? data.budget : "No-data"}</h3>
         <h3> Genres      :      ${gen}</h3>
         <h3>Revenue      :     ${data.revenue ? data.revenue : "No-data"}</h3>
+        
         `;
       });
   };

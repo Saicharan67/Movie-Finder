@@ -131,6 +131,9 @@ Modal {
   margin-bottom: 15px;
   font-size: 20px;
 }
+.Modal2 > a {
+  margin-bottom: 2rem;
+}
 .Modal2::-webkit-scrollbar {
   width: 7px;
 }

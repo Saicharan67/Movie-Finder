@@ -12,6 +12,7 @@ import Actor from "./components/Actor/Actor.js";
 import Finder from "./components/Main.js/main.js";
 import Nav from "./pages/Nav/navigator.js";
 import Footer from "./pages/Foot/foooter.js";
+import Trending from "./components/Trending/Trending.js";
 function App() {
   return (
     <div className="App">
@@ -21,7 +22,7 @@ function App() {
           <Route path="/Movie-Finder" exact component={() => <Finder />} />
           <Route path="/Movie-Finder" exact component={() => <Finder />} />
           <Route path="/actor" exact component={() => <Actor />} />
-          <Route path="/Trending" exact component={() => <Finder />} />
+          <Route path="/Trending" exact component={() => <Trending />} />
         </Switch>
         <Footer />
       </Router>
