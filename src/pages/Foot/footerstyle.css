@@ -13,3 +13,11 @@ a:hover {
   text-decoration: none;
   color: rgb(63, 94, 153);
 }
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .footer {
+    height: 40px;
+  }
+  .container > p {
+    font-size: 10rem;
+  }
+}

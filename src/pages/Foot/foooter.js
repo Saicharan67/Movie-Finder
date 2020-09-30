@@ -11,7 +11,6 @@ function Footer() {
             <span>
               <a href="https://saicharan67.github.io/PortFolio">MaC-02</a>
             </span>{" "}
-            2020
           </p>
         </div>
       </footer>
