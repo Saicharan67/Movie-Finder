@@ -120,6 +120,7 @@ class Actor extends React.Component {
       "https://api.themoviedb.org/3/movie/" +
       movieid +
       "?api_key=4b7adfd71821a32644eb8175d4a485eb";
+    console.log(url);
     fetch(url)
       .then((response) => {
         return response.json();

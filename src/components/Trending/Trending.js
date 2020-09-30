@@ -109,15 +109,16 @@ class Trending extends React.Component {
       "https://api.themoviedb.org/3/movie/" +
       movieid +
       "?api_key=4b7adfd71821a32644eb8175d4a485eb";
+    console.log(url);
     fetch(url)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         console.log(data);
-        const gen = data.genres.map((g) => {
-          return g.name;
-        });
+        // const gen = data.genre_ids.map((g) => {
+        //   return g.name;
+        // });
         document.getElementsByClassName("Modal2")[0].innerHTML = `<div>
         <img src=${
           data.poster_path
@@ -129,7 +130,7 @@ class Trending extends React.Component {
         }</h3>
         <h3> Title      :     ${data.title ? data.title : "No-data"}</h3>    
         <h3> Budget      :      ${data.budget ? data.budget : "No-data"}</h3>
-        <h3> Genres      :      ${gen}</h3>
+        <h3> Genres      :      ${2}</h3>
         <h3>Revenue      :     ${data.revenue ? data.revenue : "No-data"}</h3>
         <a href='https://www.imdb.com/title/${
           this.state.imdb
