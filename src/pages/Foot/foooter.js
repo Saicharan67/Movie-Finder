@@ -5,8 +5,8 @@ function Footer() {
   return (
     <div className="footer">
       <footer class="bottom">
-        <div class="container">
-          <p class="m-0 text-center text-white" style={{ fontSize: 17 }}>
+        <div class="cont">
+          <p className="p" style={{ color: "whitesmoke" }}>
             Copyright &copy;{" "}
             <span>
               <a href="https://saicharan67.github.io/PortFolio">MaC-02</a>

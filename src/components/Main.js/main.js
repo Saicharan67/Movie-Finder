@@ -12,6 +12,7 @@ class Finder extends React.Component {
       ListOfMovies: [],
       visible: false,
       imdb: "",
+      PopupCount: 0,
     };
   }
   openModal() {
@@ -68,6 +69,12 @@ class Finder extends React.Component {
           this.setState({
             ListOfMovies: v,
           });
+          if (this.state.PopupCount == 0) {
+            document.getElementsByClassName("Popup")[0].style.display = "flex";
+            this.setState({
+              PopupCount: 1,
+            });
+          }
         } else {
           this.OnNodata();
         }
@@ -76,6 +83,9 @@ class Finder extends React.Component {
     this.setState({
       currentSearch: "",
     });
+    setTimeout(() => {
+      document.getElementsByClassName("Popup")[0].style.display = "none";
+    }, 5000);
   };
   Ondata = () => {
     document.getElementsByClassName("nodata-img")[0].style.display = "none";
@@ -88,6 +98,9 @@ class Finder extends React.Component {
     if (event.key == "Enter") {
       this.OnSearch();
     }
+  };
+  remove = () => {
+    document.getElementsByClassName("Popup")[0].style.display = "none";
   };
   showMovie = (movieid) => {
     const imdburl =
@@ -140,51 +153,66 @@ class Finder extends React.Component {
   };
   render = () => {
     return (
-      <div className="root">
-        <div className="root-child-1">
-          <h2 className="title">Movie Finder</h2>
-          <input
-            onChange={this.InputChange}
-            value={this.state.currentSearch}
-            type="text"
-            placeholder="Enter Movie Name"
-            onKeyPress={this.OnSearchEnter}
-          ></input>
-          <button onClick={this.OnSearch} className="btn-grad">
-            Search
-          </button>
+      <div className="parent">
+        <div className="Popup">
+          <div className="maybe">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <p> ProTip..!</p>
+            <div className="i-par">
+              <i onClick={this.remove} className="fa fa-remove"></i>
+            </div>
+          </div>
+          <p>
+            {" "}
+            CLick On Movie Images<br></br> To get More Info{" "}
+          </p>
         </div>
-        <div className="loading">
-          <img src={require("../../assets/gear.gif")} />
-        </div>
+        <div className="root">
+          <div className="root-child-1">
+            <h2 className="title">Movie Finder</h2>
+            <input
+              onChange={this.InputChange}
+              value={this.state.currentSearch}
+              type="text"
+              placeholder="Enter Movie Name"
+              onKeyPress={this.OnSearchEnter}
+            ></input>
+            <button onClick={this.OnSearch} className="btn-grad">
+              Search
+            </button>
+          </div>
+          <div className="loading">
+            <img src={require("../../assets/gear.gif")} />
+          </div>
 
-        <Modal
-          visible={this.state.visible}
-          // width="800"
-          // height="700"
-          effect="fadeInLeft"
-          onClickAway={() => this.closeModal()}
-        >
-          <div className="Modal2"></div>
-        </Modal>
+          <Modal
+            visible={this.state.visible}
+            // width="800"
+            // height="700"
+            effect="fadeInLeft"
+            onClickAway={() => this.closeModal()}
+          >
+            <div className="Modal2"></div>
+          </Modal>
 
-        <div className="search"></div>
-        <div className="results">
-          <img
-            src={require("../../assets/Nodata.jpg")}
-            alt="nodata"
-            className="nodata-img"
-          />
-          {this.state.ListOfMovies.map((movie) => {
-            return (
-              <MovieClip
-                id={movie.id}
-                poster={movie.poster_path}
-                Name={movie.title}
-                when={this.showMovie}
-              />
-            );
-          })}
+          <div className="search"></div>
+          <div className="results">
+            <img
+              src={require("../../assets/Nodata.jpg")}
+              alt="nodata"
+              className="nodata-img"
+            />
+            {this.state.ListOfMovies.map((movie) => {
+              return (
+                <MovieClip
+                  id={movie.id}
+                  poster={movie.poster_path}
+                  Name={movie.title}
+                  when={this.showMovie}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     );

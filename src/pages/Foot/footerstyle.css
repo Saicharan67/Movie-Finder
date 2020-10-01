@@ -6,6 +6,11 @@
   align-items: center;
   height: 40px;
 }
+.p {
+  font-size: 1.1rem;
+  margin: 3.5px;
+}
+
 a {
   color: blanchedalmond;
 }
@@ -17,7 +22,7 @@ a:hover {
   .footer {
     height: 40px;
   }
-  .container > p {
-    font-size: 10rem;
+  .p {
+    font-size: 0.9rem;
   }
 }
