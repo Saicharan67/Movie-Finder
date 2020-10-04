@@ -85,7 +85,7 @@ class Finder extends React.Component {
     });
     setTimeout(() => {
       document.getElementsByClassName("Popup")[0].style.display = "none";
-    }, 5000);
+    }, 10000);
   };
   Ondata = () => {
     document.getElementsByClassName("nodata-img")[0].style.display = "none";
