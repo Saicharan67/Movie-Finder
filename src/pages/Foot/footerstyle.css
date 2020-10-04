@@ -1,7 +1,7 @@
-.footer {
+.cont {
   background-color: black;
   display: flex;
-  flex-direction: column;
+
   justify-content: space-around;
   align-items: center;
   height: 40px;
@@ -10,7 +10,6 @@
   font-size: 1.1rem;
   margin: 3.5px;
 }
-
 a {
   color: blanchedalmond;
 }

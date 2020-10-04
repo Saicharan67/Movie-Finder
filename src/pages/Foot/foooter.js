@@ -7,9 +7,10 @@ function Footer() {
       <footer class="bottom">
         <div class="cont">
           <p className="p" style={{ color: "whitesmoke" }}>
-            Copyright &copy;{" "}
+            Made&nbsp;With&nbsp;
+            <i class="fa fa-heart"></i>&nbsp; By{" "}
             <span>
-              <a href="https://saicharan67.github.io/PortFolio">MaC-02</a>
+              <a href="https://saicharan67.github.io/PortFolio">Charan</a>
             </span>{" "}
           </p>
         </div>
