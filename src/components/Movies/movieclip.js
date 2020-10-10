@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 
 const MovieClip = (props) => {
-  const [Url, setUrl] = useState("");
+  const [Url, setUrl] = useState(require("../../assets/noimg.png"));
   const myfuc = (event) => {
     props.when(props.id);
   };
@@ -20,7 +20,7 @@ const MovieClip = (props) => {
         }
       })
       .catch((err) => {
-        setUrl("");
+        setUrl(require("../../assets/noimg.png"));
       });
     return Url;
   };
@@ -29,8 +29,8 @@ const MovieClip = (props) => {
       <img
         src={
           urlfinder()
-            ? "https://image.tmdb.org/t/p/w185" + props.poster
-            : require("../../assets/noimg.png")
+          // ? "https://image.tmdb.org/t/p/w185" + props.poster
+          // : require("../../assets/noimg.png")
         }
         alt="poster"
         className="img"

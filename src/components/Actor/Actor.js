@@ -2,7 +2,7 @@ import React from "react";
 import "./Style.css";
 import MovieClip from "../Movies/movieclip.js";
 import Modal from "react-awesome-modal";
-
+import ScrollUpButton from "react-scroll-up-button";
 class Actor extends React.Component {
   constructor(props) {
     super(props);
@@ -51,22 +51,21 @@ class Actor extends React.Component {
         return response.json();
       })
       .then((data) => {
-        // data.results.forEach((res) => {
-        //   console.log(res.known_for_department, res.name, res.profile_path);
-        //   res.known_for.forEach((movie) => {
-        //     console.log(movie.poster_path, movie.original_title);
-        //     console.log("---------------------");
-        //   });
-        //   console.log("******************************");
-        //   // return res.known_for.poster_path !== null;
-        // });
-        console.log(
-          data.results.sort(
-            (a, b) => parseFloat(b.popularity) - parseFloat(a.popularity)
-          )
+        const CleanData = data.results.filter((res) => {
+          let count12 = 0;
+          res.known_for.forEach((movie) => {
+            if (movie.poster_path) {
+              count12 += 1;
+            }
+          });
+          return count12 > 0;
+        });
+
+        CleanData.sort(
+          (a, b) => parseFloat(b.popularity) - parseFloat(a.popularity)
         );
 
-        if (data.results.length != 0) {
+        if (CleanData.length != 0) {
           this.Ondata();
           document.getElementsByClassName(
             "search"
@@ -74,7 +73,7 @@ class Actor extends React.Component {
             a.charAt(0).toUpperCase() + a.slice(1)
           } "</h2>`;
           this.setState({
-            ListOfMovies: data.results,
+            ListOfMovies: CleanData,
           });
         } else {
           this.OnNodata();
@@ -219,6 +218,12 @@ class Actor extends React.Component {
               );
             })}
           </div>
+        </div>
+        <div>
+          <ScrollUpButton
+            ContainerClassName="AnyClassForContainer"
+            TransitionClassName="AnyClassForTransition"
+          ></ScrollUpButton>
         </div>
       </div>
     );

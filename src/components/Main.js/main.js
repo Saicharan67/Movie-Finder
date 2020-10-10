@@ -2,8 +2,8 @@ import React from "react";
 import "./style.css";
 import MovieClip from "../Movies/movieclip.js";
 import Modal from "react-awesome-modal";
-import { useMediaQuery } from "react-responsive";
-import MediaQuery from "react-responsive";
+
+import ScrollUpButton from "react-scroll-up-button";
 class Finder extends React.Component {
   constructor(props) {
     super(props);
@@ -70,10 +70,14 @@ class Finder extends React.Component {
             ListOfMovies: v,
           });
           if (this.state.PopupCount == 0) {
-            document.getElementsByClassName("Popup")[0].style.display = "flex";
             this.setState({
               PopupCount: 1,
             });
+            document.getElementsByClassName("Popup")[0].style.display = "flex";
+            setTimeout(() => {
+              document.getElementsByClassName("Popup")[0].style.display =
+                "none";
+            }, 8000);
           }
         } else {
           this.OnNodata();
@@ -83,9 +87,6 @@ class Finder extends React.Component {
     this.setState({
       currentSearch: "",
     });
-    setTimeout(() => {
-      document.getElementsByClassName("Popup")[0].style.display = "none";
-    }, 10000);
   };
   Ondata = () => {
     document.getElementsByClassName("nodata-img")[0].style.display = "none";
@@ -213,6 +214,12 @@ class Finder extends React.Component {
               );
             })}
           </div>
+        </div>
+        <div>
+          <ScrollUpButton
+            ContainerClassName="AnyClassForContainer"
+            TransitionClassName="AnyClassForTransition"
+          ></ScrollUpButton>
         </div>
       </div>
     );

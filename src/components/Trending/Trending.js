@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import MovieClip from "../Movies/movieclip.js";
 import Modal from "react-awesome-modal";
-
+import ScrollUpButton from "react-scroll-up-button";
 class Trending extends React.Component {
   constructor(props) {
     super(props);
@@ -238,12 +238,18 @@ class Trending extends React.Component {
                 <MovieClip
                   id={movie.id}
                   poster={movie.poster_path}
-                  Name={movie.title}
+                  Name={movie.title ? movie.title : movie.original_name}
                   when={this.showMovie}
                 />
               );
             })}
           </div>
+        </div>
+        <div>
+          <ScrollUpButton
+            ContainerClassName="AnyClassForContainer"
+            TransitionClassName="AnyClassForTransition"
+          ></ScrollUpButton>
         </div>
       </div>
     );
