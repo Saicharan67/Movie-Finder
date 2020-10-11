@@ -66,6 +66,7 @@ class Actor extends React.Component {
         );
 
         if (CleanData.length != 0) {
+          console.log(CleanData);
           this.Ondata();
           document.getElementsByClassName(
             "search"

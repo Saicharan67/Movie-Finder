@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 
 const MovieClip = (props) => {
-  const [Url, setUrl] = useState(require("../../assets/noimg.png"));
+  const [Url, setUrl] = useState(require("../../assets/123.gif"));
   const myfuc = (event) => {
     props.when(props.id);
   };
@@ -28,9 +28,10 @@ const MovieClip = (props) => {
     <div className="clip">
       <img
         src={
-          urlfinder()
-          // ? "https://image.tmdb.org/t/p/w185" + props.poster
-          // : require("../../assets/noimg.png")
+          // urlfinder()
+          props.poster
+            ? "https://image.tmdb.org/t/p/w185" + props.poster
+            : require("../../assets/noimg.png")
         }
         alt="poster"
         className="img"
