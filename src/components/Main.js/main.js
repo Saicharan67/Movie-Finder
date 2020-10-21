@@ -14,6 +14,10 @@ class Finder extends React.Component {
       imdb: "",
       PopupCount: 0,
     };
+    this.inputRef=React.createRef()
+  }
+  componentDidMount(){
+    this.inputRef.current.focus()
   }
   openModal() {
     this.setState({
@@ -177,6 +181,7 @@ class Finder extends React.Component {
               type="text"
               placeholder="Enter Movie Name"
               onKeyPress={this.OnSearchEnter}
+              ref={this.inputRef}
             ></input>
             <button onClick={this.OnSearch} className="btn-grad">
               Search

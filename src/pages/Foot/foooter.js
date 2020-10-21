@@ -1,5 +1,5 @@
 import React from "react";
-import StickyFooter from "react-sticky-footer";
+
 import "./footerstyle.css";
 function Footer() {
   return (
