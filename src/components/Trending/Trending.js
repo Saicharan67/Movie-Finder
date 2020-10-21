@@ -202,10 +202,11 @@ class Trending extends React.Component {
             {this.state.ListOfPersons.map((res) => {
               return (
                 <div className="divisions">
-                  <h3 className="heading">
-                    Name:{res.name} Known_For:{res.known_for_department}
-                  </h3>
-
+                  
+                  <h4 className="headings">Name &nbsp; : &nbsp;{res.name}</h4>
+                  <h4 className="headings">
+                    Known For&nbsp; :&nbsp; {res.known_for_department}
+                  </h4>
                   <img
                     style={{ width: 200, height: 300 }}
                     src={
