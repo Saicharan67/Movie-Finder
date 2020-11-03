@@ -6,6 +6,8 @@ This app Finds the Movie and details of the movie for you based On....
 
 U Can Find ScreenShots of the project Below...👇👇👇
 
+![Alt text](src\assets\1.png?raw=true "Home Page")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
