@@ -1,4 +1,10 @@
-This app Finds the Movie and details of the movie for you
+This app Finds the Movie and details of the movie for you based On....
+
+- Actor
+- Cast/Crew
+- Trending
+
+U Can Find ScreenShots of the project Below...👇👇👇
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
